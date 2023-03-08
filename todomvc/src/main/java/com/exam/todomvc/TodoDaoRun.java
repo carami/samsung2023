@@ -17,15 +17,29 @@ public class TodoDaoRun {
 		
 		TodoDao dao = context.getBean(TodoDao.class);
 		
-		int resultCount = dao.insertTodo("걷기!!");
-		System.out.println(resultCount);
+//		int resultCount = dao.insertTodo("걷기!!");
+//		System.out.println(resultCount);
 		
 		
-		List<Todo> todos =dao.getTodos();
+//		dao.deleteTodo(1L);
 		
-		for (Todo todo : todos) {
-			System.out.println(todo);
-		}
+//		Todo updateTodo = new Todo();
+//		updateTodo.setId(2L);
+//		updateTodo.setDone(true);
+//		
+//		dao.updateTodo(updateTodo);
+//		
+//		List<Todo> todos =dao.getTodos();
+//		
+//		for (Todo todo : todos) {
+//			System.out.println(todo);
+//		}
+		
+//		Todo todo = dao.getTodo(3L);
+//		System.out.println(todo);
+		
+		Todo todo = 	dao.addTodo("test");
+		System.out.println(todo);
 	}
 
 }
