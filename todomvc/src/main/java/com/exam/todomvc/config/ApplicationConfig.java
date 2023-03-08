@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = {"com.exam.todomvc.dao"})
+@ComponentScan(basePackages = {"com.exam.todomvc.dao","com.exam.todomvc.service"})
 public class ApplicationConfig {
 	@Bean
 	public DataSource dataSource() {
