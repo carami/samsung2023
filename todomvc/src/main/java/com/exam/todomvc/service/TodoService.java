@@ -39,4 +39,8 @@ public class TodoService {
 	public Todo addTodo(String todo) {
 		return todoDao.addTodo(todo);
 	}
+	@Transactional(readOnly = true)
+	public Todo getTodo(Long id) {
+		return todoDao.getTodo(id);
+	}
 }
