@@ -17,9 +17,9 @@ public class JpaRun {
 		try {
 			
 //등록
-
+//
 //			Product product = new Product();
-//			product.setId(3L);
+////			product.setId(3L);
 //			product.setName("car");
 //			product.setPrice(3000); // 여기까지는 비영속 상태!!
 //			
@@ -29,37 +29,38 @@ public class JpaRun {
 			
 			
 //수정 
-//			Product findProduct = em.find(Product.class, 33L);
-//			findProduct.setName("testtest");
-//			findProduct.setPrice(30000);
-//			
-//			
-//			System.out.println("kdjfkdjf");
-//			
-//			
-//			
-//			findProduct.setName("notebook");
-//			findProduct.setPrice(3000000);
+			Product findProduct = em.find(Product.class, 34L);
+			findProduct.setName("testtest");
+			findProduct.setPrice(30000);
+			
+			
+			System.out.println("kdjfkdjf");
+			
+			Product findProduct2 = em.find(Product.class, 34L);
+			
+			findProduct2.setName("notebook22");
+			findProduct2.setPrice(3000000);
+			
+			if(findProduct == findProduct2) {
+				System.out.println("같다");
+			}else {
+				System.out.println("달라요");
+			}
 			
 			//삭제
 			
-			Product delProduct = em.find(Product.class, 33L);
-			em.remove(delProduct);
+//			Product delProduct = em.find(Product.class, 33L);
+//			em.remove(delProduct);
 			
 			
-			
-			
-			
-			
-			
-			
-			
+					
 			System.out.println("commit() 전!!");
 			tx.commit();
 			System.out.println("commit() 후!!");
 			
 		} catch (Exception e) {
 			tx.rollback();
+			e.printStackTrace();
 		}finally {
 			em.close();
 			emf.close();
