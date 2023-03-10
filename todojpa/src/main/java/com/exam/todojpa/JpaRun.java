@@ -36,18 +36,37 @@ public class JpaRun {
 		
 //		todos = todoRepo.findAll();   //전체조회    
 		
-//		Pageable pageable = PageRequest.of(0, 3,Sort.by("todo").descending());
+		Pageable pageable = PageRequest.of(0, 3,Sort.by("todo").descending());
 //		todos = todoRepo.findAll(pageable).getContent();
 //		
 //		for (Todo todo : todos) {
 //			System.out.println(todo);
 //		}
 		
-		//수정
+		//4. 수정
 		TodoService service = context.getBean(TodoService.class);
-		System.out.println("service 시작전");
-		Todo updateTodo = service.updateTodo(2L);
-		System.out.println("service 종료");
+//		System.out.println("service 시작전");
+//		Todo updateTodo = service.updateTodo(2L);
+//		System.out.println("service 종료");
+		
+		//5. 삭제
+		service.deleteTodo(47L);
+		
+		//5. findByTodo를 이용
+//		Todo findTodo = todoRepo.findByTodo("test 할일 1").get();
+//		System.out.println(findTodo);
+//		
+//		todos = todoRepo.findByTodoContaining("기",pageable);
+		
+		//6. jpql을 이용
+//		todos = todoRepo.findTodos("기", pageable);
+		
+		//7. native query 이용
+		todos = todoRepo.findTodo2("기");
+		for (Todo todo : todos) {
+			System.out.println(todo);
+		}
+		
 	}
 
 }

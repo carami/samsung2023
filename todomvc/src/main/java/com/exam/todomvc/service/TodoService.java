@@ -21,7 +21,7 @@ public class TodoService {
 		return todoDao.getTodos();
 	}
 	
-//	@Transactional
+	@Transactional
 	public Todo updateTodo(Long id) {
 		Todo todo =	todoDao.getTodo(id);
 		todo.setDone(!todo.isDone());
